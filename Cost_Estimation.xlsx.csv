@@ -1,0 +1,18 @@
+﻿Cost Estimation Summary,,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,,
+0,0.56,6.72,USD,,,,,,
+,,* Includes upfront cost,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Detailed Estimate,,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+My Estimate,US East (N. Virginia),predict-default-risk,AWS Lambda,0,0,0,USD,,"Architecture (x86), Architecture (x86), Invoke Mode (Buffered), Amount of ephemeral storage allocated (512 MB), Number of requests (30000 per month)"
+My Estimate,US East (N. Virginia),,S3 Standard,0,0.01,0.12,USD,,"S3 Standard storage (0.002 GB per month), GET, SELECT, and all other requests from S3 Standard (30000), PUT, COPY, POST, LIST requests to S3 Standard (10)"
+My Estimate,US East (N. Virginia),,Data Transfer,0,0,0,USD,,
+My Estimate,US East (N. Virginia),,Amazon Elastic Container Registry,0,0.05,0.6,USD,,Amount of data stored (0.5 GB per month)
+My Estimate,US East (N. Virginia),,Amazon CloudWatch,0,0.5045,6.05,USD,,"Number of mobile OTEL events and spans or spans per visit (70), Mobile sampling rate (1), Standard Logs: Data Ingested (1 GB)"
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Acknowledgement,,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,,

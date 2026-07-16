@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Loan Underwriting Risk Prediction API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/predict": {
+      "post": {
+        "summary": "Predict default risk for a loan applicant",
+        "description": "Takes applicant features and returns a risk score, risk category, and recommended action (APPROVE, REVIEW, or REJECT)",
+        "operationId": "predictDefaultRisk",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "AGE_YEARS": {"type": "string", "description": "Applicant age in years"},
+                  "EMPLOYMENT_YEARS": {"type": "string", "description": "Years at current job"},
+                  "IS_UNEMPLOYED": {"type": "string", "description": "1 if unemployed, 0 if employed"},
+                  "CREDIT_TO_INCOME_RATIO": {"type": "string", "description": "Loan amount divided by annual income"},
+                  "ANNUITY_TO_INCOME_RATIO": {"type": "string", "description": "Monthly payment divided by monthly income"},
+                  "CREDIT_PER_FAMILY_MEMBER": {"type": "string", "description": "Loan amount divided by family size"},
+                  "INCOME_PER_FAMILY_MEMBER": {"type": "string", "description": "Annual income divided by family size"},
+                  "CHILD_DEPENDENCY_RATIO": {"type": "string", "description": "Children count divided by family members"},
+                  "EXT_SOURCE_MEAN": {"type": "string", "description": "Average external credit score (0 to 1)"},
+                  "CREDIT_TERM": {"type": "string", "description": "Loan duration in months"},
+                  "EXT_SOURCE_1_MISSING": {"type": "string", "description": "1 if external score 1 is missing"},
+                  "OWN_CAR_AGE_MISSING": {"type": "string", "description": "1 if applicant has no car"},
+                  "YEARS_BUILD_MISSING": {"type": "string", "description": "1 if building year unknown"},
+                  "NAME_CONTRACT_TYPE": {"type": "string", "description": "Cash loans or Revolving loans"},
+                  "CODE_GENDER": {"type": "string", "description": "M or F"},
+                  "FLAG_OWN_CAR": {"type": "string", "description": "Y or N"},
+                  "FLAG_OWN_REALTY": {"type": "string", "description": "Y or N"},
+                  "NAME_TYPE_SUITE": {"type": "string", "description": "Who accompanied the applicant"},
+                  "NAME_INCOME_TYPE": {"type": "string", "description": "Income type eg Working, Pensioner"},
+                  "NAME_EDUCATION_TYPE": {"type": "string", "description": "Education level"},
+                  "NAME_FAMILY_STATUS": {"type": "string", "description": "Marital status"},
+                  "NAME_HOUSING_TYPE": {"type": "string", "description": "Housing type"},
+                  "OCCUPATION_TYPE": {"type": "string", "description": "Job type"},
+                  "WEEKDAY_APPR_PROCESS_START": {"type": "string", "description": "Day of week application started"},
+                  "ORGANIZATION_TYPE": {"type": "string", "description": "Employer organization type"},
+                  "FONDKAPREMONT_MODE": {"type": "string", "description": "Housing fund mode"},
+                  "HOUSETYPE_MODE": {"type": "string", "description": "House type"},
+                  "WALLSMATERIAL_MODE": {"type": "string", "description": "Wall material"},
+                  "EMERGENCYSTATE_MODE": {"type": "string", "description": "Yes or No"}
+                },
+                "required": ["AGE_YEARS", "EMPLOYMENT_YEARS", "IS_UNEMPLOYED", "CREDIT_TO_INCOME_RATIO", "EXT_SOURCE_MEAN", "NAME_CONTRACT_TYPE", "CODE_GENDER"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Risk prediction result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "risk_score": {"type": "number", "description": "Probability of default (0 to 1)"},
+                    "risk_category": {"type": "string", "description": "Low Risk, Medium Risk, or High Risk"},
+                    "recommended_action": {"type": "string", "description": "APPROVE, REVIEW, or REJECT"}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
