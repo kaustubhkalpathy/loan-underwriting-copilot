@@ -1,0 +1,31 @@
+# Large dataset files (too large for GitHub — download from Kaggle)
+Datasets/application_train.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files (never commit secrets)
+.env
+.env.*
+*.env
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Temp / log files
+*.log
