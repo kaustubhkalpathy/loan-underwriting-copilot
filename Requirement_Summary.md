@@ -5,7 +5,7 @@
 | Field | Details |
 |-------|---------|
 | Project Name | Loan Underwriting Copilot |
-| Client | Quadra Systems (Internal — AWS Partner) |
+| Organization | Quadra Systems (Internal — AWS Partner) |
 | Domain | Financial Services — Credit Risk Assessment |
 | Objective | Automate loan underwriting decisions using ML, reducing manual review time and providing explainable risk assessments |
 | Region | US East (N. Virginia) — us-east-1 |
